@@ -10,7 +10,7 @@ app.use(compression());
 
 app.get('/openlearn/badges/assertion.php', (req, res, next) => {
     const badgeHash = req.query.b;
-    const badgeID = req.query.id;
+    const badgeID = req.query.id || 123;
     const domain = req.query.url || 'http://127.0.0.1:3055'
 
     return res.status(200).json({
